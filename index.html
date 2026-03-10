@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Seoul & HK MNGMT Co. | 전략 컨설팅</title>
+  <meta name="description" content="프라이빗 부티크 전략 컨설팅 기업. M&A, AI 트랜스포메이션, F&B·호스피탈리티 확장, 글로벌 라이센싱을 통해 APAC 기업 리더들의 경쟁우위 확보를 지원합니다."/>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --red: #c41e3a;
+      --navy: #002147;
+      --dark: #1a1a1a;
+      --white: #ffffff;
+      --off: #f5f4f2;
+      --light: #ebebeb;
+      --mid: #767676;
+      --border: #d8d8d8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Malgun Gothic', '맑은 고딕', 'Apple SD Gothic Neo', 'Barlow', sans-serif; background: var(--white); color: var(--dark); font-weight: 400; line-height: 1.7; overflow-x: hidden; }
+
+    /* ── UTILITY BAR ── */
+    .util-bar { background: var(--navy); padding: 0 60px; display: flex; justify-content: flex-end; align-items: center; height: 34px; }
+    .util-bar a { font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.55); text-decoration: none; font-weight: 500; padding: 0 16px; height: 34px; display: flex; align-items: center; border-left: 1px solid rgba(255,255,255,.1); transition: color .2s; }
+    .util-bar a:hover { color: var(--white); }
+
+    /* ── MAIN NAV ── */
+    nav { background: var(--white); border-bottom: 1px solid var(--border); padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 70px; position: sticky; top: 0; z-index: 200; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+    .nav-logo { display: flex; align-items: baseline; text-decoration: none; }
+    .nav-logo-main { font-family: 'Barlow', sans-serif; font-size: 1.15rem; font-weight: 700; color: var(--navy); letter-spacing: -.01em; }
+    .nav-logo-dot { color: var(--red); }
+    .nav-links { display: flex; height: 70px; list-style: none; }
+    .nav-links > li { height: 100%; display: flex; align-items: center; }
+    .nav-links > li > a { font-size: .78rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--dark); text-decoration: none; padding: 0 18px; height: 100%; display: flex; align-items: center; border-bottom: 3px solid transparent; margin-bottom: -1px; transition: color .2s, border-color .2s; }
+    .nav-links > li > a:hover { color: var(--navy); border-color: var(--red); }
+    .nav-cta { background: var(--red); color: var(--white); padding: 0 20px; height: 38px; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; display: flex; align-items: center; transition: background .2s; }
+    .nav-cta:hover { background: #a3182f; }
+
+    /* ── HERO ── */
+    .hero { position: relative; overflow: hidden; height: 580px; background: var(--navy); display: flex; align-items: flex-end; }
+    .hero-bg { position: absolute; inset: 0; background: linear-gradient(135deg, #0d1b2a 0%, #1a3355 40%, #0a1628 100%); }
+    .hero-pattern { position: absolute; inset: 0; opacity: .05; background-image: linear-gradient(var(--white) 1px, transparent 1px), linear-gradient(90deg, var(--white) 1px, transparent 1px); background-size: 60px 60px; }
+    .hero-accent { position: absolute; right: 0; top: 0; bottom: 0; width: 42%; background: linear-gradient(180deg, rgba(196,30,58,.12) 0%, rgba(196,30,58,.04) 100%); border-left: 1px solid rgba(196,30,58,.15); }
+    .hero-content { position: relative; z-index: 2; padding: 0 60px 72px; max-width: 800px; }
+    .hero-category { display: inline-flex; align-items: center; font-size: .7rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--white); background: var(--red); padding: 5px 14px; margin-bottom: 24px; }
+    .hero-h1 { font-family: 'Libre Baskerville', serif; font-size: clamp(2rem, 4vw, 3.4rem); font-weight: 700; line-height: 1.18; color: var(--white); margin-bottom: 20px; max-width: 700px; }
+    .hero-h1 em { font-style: italic; color: rgba(255,255,255,.7); }
+    .hero-sub { font-size: 1rem; color: rgba(255,255,255,.6); line-height: 1.75; max-width: 580px; margin-bottom: 32px; font-weight: 300; }
+    .hero-read { display: inline-flex; align-items: center; gap: 10px; font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--white); text-decoration: none; border-bottom: 2px solid var(--red); padding-bottom: 4px; transition: gap .2s; }
+    .hero-read:hover { gap: 16px; }
+    .hero-indicators { position: absolute; right: 60px; bottom: 72px; z-index: 2; display: flex; gap: 8px; }
+    .ind { width: 28px; height: 3px; background: rgba(255,255,255,.3); cursor: pointer; transition: background .2s; }
+    .ind.active { background: var(--red); width: 48px; }
+
+    /* ── WHAT'S NEW ── */
+    .whats-new { padding: 0 60px; background: var(--off); border-bottom: 1px solid var(--border); }
+    .wn-inner { display: grid; grid-template-columns: auto 1fr 1fr 1fr; align-items: stretch; min-height: 160px; }
+    .wn-label { padding: 28px 40px 28px 0; display: flex; align-items: center; border-right: 1px solid var(--border); }
+    .wn-label span { font-size: .68rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--red); }
+    .wn-card { padding: 28px 32px; display: flex; flex-direction: column; justify-content: space-between; gap: 10px; border-right: 1px solid var(--border); transition: background .2s; text-decoration: none; }
+    .wn-card:last-child { border-right: none; }
+    .wn-card:hover { background: var(--white); }
+    .wn-cat { font-size: .65rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--red); }
+    .wn-title { font-size: .92rem; font-weight: 600; color: var(--dark); line-height: 1.45; flex: 1; }
+    .wn-date { font-size: .72rem; color: var(--mid); }
+
+    /* ── SECTIONS ── */
+    .section { padding: 72px 60px; border-bottom: 1px solid var(--border); }
+    .section-label { font-size: .68rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--red); margin-bottom: 36px; display: flex; align-items: center; gap: 16px; }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); max-width: 400px; }
+
+    /* ── FEATURED INSIGHTS ── */
+    .featured-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--border); }
+    .feat-main { background: var(--navy); padding: 52px 48px; display: flex; flex-direction: column; justify-content: space-between; min-height: 360px; }
+    .feat-cat { font-size: .68rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+    .feat-title { font-family: 'Libre Baskerville', serif; font-size: 1.7rem; font-weight: 700; line-height: 1.3; color: var(--white); flex: 1; margin-bottom: 24px; }
+    .feat-body { font-size: .9rem; color: rgba(255,255,255,.5); line-height: 1.75; margin-bottom: 28px; font-weight: 300; }
+    .feat-link { display: inline-flex; align-items: center; gap: 8px; font-size: .73rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--white); text-decoration: none; border-bottom: 2px solid rgba(196,30,58,.6); padding-bottom: 3px; transition: gap .2s, border-color .2s; }
+    .feat-link:hover { gap: 14px; border-color: var(--red); }
+    .feat-side { display: flex; flex-direction: column; border-left: 1px solid var(--border); }
+    .feat-card { padding: 32px 36px; flex: 1; border-bottom: 1px solid var(--border); transition: background .2s; cursor: pointer; }
+    .feat-card:last-child { border-bottom: none; }
+    .feat-card:hover { background: var(--off); }
+    .feat-card .feat-cat { font-size: .63rem; margin-bottom: 10px; }
+    .feat-card .feat-title { font-size: 1rem; color: var(--dark); font-family: 'Barlow', sans-serif; font-weight: 700; margin-bottom: 8px; }
+    .feat-card .feat-body { font-size: .84rem; margin-bottom: 12px; color: var(--mid); }
+    .feat-card .feat-link { color: var(--navy); border-color: rgba(0,33,71,.2); font-size: .68rem; }
+
+    /* ── CAP STRIP ── */
+    .cap-strip { background: var(--navy); padding: 0 60px; }
+    .cap-strip-inner { display: flex; align-items: stretch; border-left: 1px solid rgba(255,255,255,.07); }
+    .cap-item { flex: 1; padding: 28px 20px; border-right: 1px solid rgba(255,255,255,.07); text-align: center; cursor: pointer; transition: background .25s; }
+    .cap-item:hover { background: rgba(255,255,255,.05); }
+    .cap-item.active { border-top: 3px solid var(--red); background: rgba(196,30,58,.08); }
+    .cap-icon { font-size: 1.4rem; margin-bottom: 10px; opacity: .7; }
+    .cap-name { font-size: .73rem; font-weight: 600; letter-spacing: .04em; color: rgba(255,255,255,.75); line-height: 1.4; }
+    .cap-item.active .cap-name { color: var(--white); }
+
+    /* ── PRACTICE AREAS ── */
+    .practice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--border); }
+    .practice-card { padding: 40px 36px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); transition: background .2s; position: relative; overflow: hidden; }
+    .practice-card:hover { background: var(--off); }
+    .practice-card:hover .pc-arrow { opacity: 1; transform: translateX(0); }
+    .pc-num { font-family: 'Libre Baskerville', serif; font-size: 2.8rem; font-weight: 700; font-style: italic; color: var(--border); line-height: 1; margin-bottom: 20px; user-select: none; }
+    .pc-title { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; line-height: 1.35; }
+    .pc-body { font-size: .84rem; color: var(--mid); line-height: 1.75; }
+    .pc-tag { display: inline-block; margin-top: 18px; font-size: .63rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--red); border-top: 2px solid var(--red); padding-top: 6px; }
+    .pc-arrow { position: absolute; bottom: 28px; right: 28px; font-size: 1.2rem; color: var(--red); opacity: 0; transform: translateX(-6px); transition: opacity .2s, transform .2s; }
+    .pc-badge { position: absolute; top: 0; right: 0; background: var(--red); color: var(--white); font-size: .58rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: 4px 10px; }
+
+    /* ── PERSPECTIVE ── */
+    .perspective-pull { background: var(--off); border-bottom: 1px solid var(--border); padding: 72px 60px; }
+    .pp-inner { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start; max-width: 1200px; }
+    .pp-heading { font-family: 'Libre Baskerville', serif; font-size: 1.9rem; font-weight: 700; line-height: 1.25; color: var(--navy); }
+    .pp-blockquote { font-family: 'Libre Baskerville', serif; font-size: 1.2rem; font-style: italic; color: var(--dark); line-height: 1.7; border-left: 4px solid var(--red); padding-left: 24px; margin-bottom: 24px; }
+    .pp-body { font-size: .95rem; color: var(--mid); line-height: 1.85; margin-bottom: 16px; }
+    .pp-link { display: inline-flex; align-items: center; gap: 8px; font-size: .73rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--navy); text-decoration: none; border-bottom: 2px solid var(--navy); padding-bottom: 3px; margin-top: 8px; transition: gap .2s; }
+    .pp-link:hover { gap: 14px; }
+
+    /* ── TEAM ── */
+    .team-section { padding: 72px 60px; border-bottom: 1px solid var(--border); }
+    .team-intro-row { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 52px; }
+    .team-h2 { font-family: 'Libre Baskerville', serif; font-size: 2rem; font-weight: 700; color: var(--navy); line-height: 1.2; }
+    .team-note { font-size: .95rem; color: var(--mid); line-height: 1.85; }
+    .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--border); }
+    .tm { padding: 32px 28px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); transition: background .2s; }
+    .tm:hover { background: var(--off); }
+    .tm-initial { width: 44px; height: 44px; background: var(--navy); display: flex; align-items: center; justify-content: center; font-family: 'Libre Baskerville', serif; font-size: 1.1rem; color: var(--white); font-weight: 700; margin-bottom: 16px; }
+    .tm-role { font-size: .92rem; font-weight: 700; color: var(--dark); margin-bottom: 14px; line-height: 1.35; }
+    .tm-creds { list-style: none; }
+    .tm-creds li { font-size: .78rem; color: var(--mid); padding: 4px 0; border-bottom: 1px solid var(--light); line-height: 1.4; }
+    .tm-creds li:last-child { border: none; }
+    .tm-spec { display: inline-block; margin-top: 12px; font-size: .62rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--red); border-top: 2px solid var(--red); padding-top: 5px; }
+
+    /* ── SECTORS ── */
+    .sectors { background: var(--off); padding: 72px 60px; border-bottom: 1px solid var(--border); }
+    .sectors-h { display: grid; grid-template-columns: 1fr 2fr; gap: 60px; margin-bottom: 48px; align-items: start; }
+    .sectors-h2 { font-family: 'Libre Baskerville', serif; font-size: 2rem; font-weight: 700; color: var(--navy); }
+    .sectors-note { font-size: .95rem; color: var(--mid); line-height: 1.85; }
+    .sectors-list { display: flex; flex-direction: column; border: 1px solid var(--border); }
+    .sector-row { display: grid; grid-template-columns: 56px 1fr auto; align-items: center; border-bottom: 1px solid var(--border); background: var(--white); transition: background .2s; cursor: default; }
+    .sector-row:last-child { border-bottom: none; }
+    .sector-row:hover { background: var(--navy); }
+    .sector-row:hover .sector-n { color: var(--red); border-color: rgba(255,255,255,.1); }
+    .sector-row:hover .sector-name { color: var(--white); }
+    .sector-row:hover .sector-desc { color: rgba(255,255,255,.45); }
+    .sector-row:hover .sector-badge { background: var(--red); color: var(--white); border-color: var(--red); }
+    .sector-n { font-family: 'Libre Baskerville', serif; font-size: .85rem; font-style: italic; color: var(--mid); padding: 24px 0 24px 28px; border-right: 1px solid var(--border); transition: color .2s, border-color .2s; }
+    .sector-body { padding: 24px 32px; }
+    .sector-name { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 4px; transition: color .2s; }
+    .sector-desc { font-size: .82rem; color: var(--mid); transition: color .2s; }
+    .sector-badge { margin-right: 28px; font-size: .62rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--red); border: 1px solid rgba(196,30,58,.3); padding: 5px 12px; white-space: nowrap; transition: all .2s; }
+
+    /* ── CTA BAND ── */
+    .cta-band { background: var(--navy); padding: 64px 60px; display: flex; justify-content: space-between; align-items: center; border-bottom: 4px solid var(--red); }
+    .cta-band-text { font-family: 'Libre Baskerville', serif; font-size: 1.6rem; font-weight: 700; color: var(--white); max-width: 540px; line-height: 1.3; }
+    .cta-band-text em { font-style: italic; color: rgba(255,255,255,.6); }
+    .cta-band-btn { background: var(--white); color: var(--navy); padding: 16px 36px; font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; flex-shrink: 0; margin-left: 40px; transition: background .2s, color .2s; }
+    .cta-band-btn:hover { background: var(--red); color: var(--white); }
+
+    /* ── CONTACT ── */
+    .contact { display: grid; grid-template-columns: 1fr 1fr; }
+    .contact-l { padding: 72px 60px; border-right: 1px solid var(--border); }
+    .contact-r { padding: 72px 60px; background: var(--off); }
+    .contact-h2 { font-family: 'Libre Baskerville', serif; font-size: 2rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .contact-sub { font-size: .95rem; color: var(--mid); line-height: 1.8; margin-bottom: 40px; }
+    .ci { margin-bottom: 28px; }
+    .ci-label { font-size: .62rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--mid); margin-bottom: 5px; }
+    .ci-val { font-size: .95rem; color: var(--dark); line-height: 1.6; }
+    .ci-val a { color: var(--navy); text-decoration: none; font-weight: 500; }
+    .ci-val a:hover { color: var(--red); text-decoration: underline; }
+    .form-h { font-size: 1.05rem; font-weight: 700; color: var(--dark); margin-bottom: 28px; }
+    .fg { margin-bottom: 18px; }
+    .fg label { display: block; font-size: .62rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--mid); margin-bottom: 7px; }
+    .fg input, .fg textarea, .fg select { width: 100%; background: var(--white); border: 1px solid var(--border); padding: 11px 14px; font-family: 'Barlow', sans-serif; font-size: .92rem; color: var(--dark); font-weight: 400; outline: none; transition: border-color .2s; border-radius: 0; -webkit-appearance: none; }
+    .fg input:focus, .fg textarea:focus, .fg select:focus { border-color: var(--navy); }
+    .fg textarea { height: 90px; resize: none; }
+    .fg select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23767676'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; cursor: pointer; }
+    .fr { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .submit-btn { background: var(--navy); color: var(--white); border: none; padding: 13px 32px; font-family: 'Barlow', sans-serif; font-size: .73rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; transition: background .2s; }
+    .submit-btn:hover { background: var(--red); }
+    .submit-note { font-size: .72rem; color: var(--mid); margin-top: 10px; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--dark); }
+    .footer-main { padding: 56px 60px 40px; }
+    .footer-top { display: grid; grid-template-columns: 2.5fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 44px; border-bottom: 1px solid rgba(255,255,255,.1); margin-bottom: 28px; }
+    .ft-brand-name { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 12px; }
+    .ft-brand-desc { font-size: .8rem; color: rgba(255,255,255,.35); line-height: 1.75; max-width: 260px; }
+    .ft-col h4 { font-size: .62rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 16px; }
+    .ft-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .ft-col a { font-size: .8rem; color: rgba(255,255,255,.5); text-decoration: none; transition: color .2s; }
+    .ft-col a:hover { color: var(--white); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; }
+    .ft-copy { font-size: .7rem; color: rgba(255,255,255,.25); }
+    .ft-legal { display: flex; gap: 20px; }
+    .ft-legal a { font-size: .7rem; color: rgba(255,255,255,.25); text-decoration: none; transition: color .2s; }
+    .ft-legal a:hover { color: rgba(255,255,255,.5); }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.on { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width: 1100px) {
+      .practice-grid { grid-template-columns: repeat(2, 1fr); }
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 28px; }
+    }
+    @media(max-width: 768px) {
+      .util-bar, nav, .whats-new, .section, .perspective-pull, .team-section, .sectors, .cap-strip, .cta-band, .contact-l, .contact-r, .footer-main { padding-left: 20px; padding-right: 20px; }
+      .nav-links { display: none; }
+      .hero { height: auto; min-height: 400px; }
+      .hero-content { padding: 60px 20px 52px; }
+      .wn-inner { grid-template-columns: 1fr; }
+      .wn-label { display: none; }
+      .wn-card { border-right: none; border-bottom: 1px solid var(--border); }
+      .featured-grid, .sectors-h, .team-intro-row, .pp-inner { grid-template-columns: 1fr; }
+      .feat-side { border-left: none; border-top: 1px solid var(--border); }
+      .practice-grid, .team-grid { grid-template-columns: 1fr; }
+      .cap-strip-inner { flex-wrap: wrap; }
+      .cap-item { flex: 1 1 33%; }
+      .contact { grid-template-columns: 1fr; }
+      .cta-band { flex-direction: column; gap: 24px; text-align: center; }
+      .cta-band-btn { margin-left: 0; }
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+    /* ── KOREAN FONT OVERRIDE (all headings & body) ── */
+    body:not(.lang-en) .hero-h1,
+    body:not(.lang-en) .hero-h1 em,
+    body:not(.lang-en) .feat-title,
+    body:not(.lang-en) .feat-card .feat-title,
+    body:not(.lang-en) .pc-num,
+    body:not(.lang-en) .pp-heading,
+    body:not(.lang-en) .pp-blockquote,
+    body:not(.lang-en) .team-h2,
+    body:not(.lang-en) .tm-initial,
+    body:not(.lang-en) .sectors-h2,
+    body:not(.lang-en) .sector-n,
+    body:not(.lang-en) .cta-band-text,
+    body:not(.lang-en) .contact-h2,
+    body:not(.lang-en) .fg input,
+    body:not(.lang-en) .fg textarea,
+    body:not(.lang-en) .fg select,
+    body:not(.lang-en) .submit-btn {
+      font-family: 'Malgun Gothic', '맑은 고딕', 'Apple SD Gothic Neo', sans-serif !important;
+      font-style: normal;
+    }
+
+    /* ── LANG TOGGLE ── */
+    .lang-toggle {
+      display: flex; align-items: center; gap: 0;
+      border: 1px solid rgba(255,255,255,.25);
+      overflow: hidden; flex-shrink: 0;
+    }
+    .lang-btn {
+      padding: 0 14px; height: 34px;
+      font-size: .68rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; cursor: pointer; border: none;
+      background: transparent; color: rgba(255,255,255,.45);
+      transition: background .2s, color .2s;
+      border-right: 1px solid rgba(255,255,255,.2);
+      font-family: 'Malgun Gothic', '맑은 고딕', 'Barlow', sans-serif;
+    }
+    .lang-btn:last-child { border-right: none; }
+    .lang-btn.active { background: var(--red); color: var(--white); }
+    .lang-btn:not(.active):hover { color: var(--white); background: rgba(255,255,255,.08); }
+
+    /* EN mode font override */
+    body.lang-en { font-family: 'Barlow', sans-serif; }
+  </style>
+</head>
+<body>
+
+<!-- UTILITY BAR -->
+<div class="util-bar">
+  <a href="#contact">문의하기</a>
+  <a href="#team">전문가팀</a>
+  <a href="#contact">오피스</a>
+  <div class="lang-toggle" style="margin-left:16px">
+    <button class="lang-btn active" id="btn-ko" onclick="setLang('ko')">KO</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+</div>
+
+<!-- MAIN NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <span class="nav-logo-main">Seoul & HK<span class="nav-logo-dot"> · </span>MNGMT</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#insights">인사이트</a></li>
+    <li><a href="#capabilities">서비스</a></li>
+    <li><a href="#sectors">산업</a></li>
+    <li><a href="#team">리더십</a></li>
+    <li><a href="#contact">회사소개</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">미팅 요청</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-accent"></div>
+  <div class="hero-content">
+    <div class="hero-category">전략 컨설팅 · APAC · 광둥·홍콩·마카오 대만구</div>
+    <h1 class="hero-h1">
+      기업 리더들이<br/>
+      <em>경쟁우위를 확보하고</em><br/>
+      아시아 태평양을 선도하도록
+    </h1>
+    <p class="hero-sub">M&A와 Secondary 시장 매각 전략부터 AI 트랜스포메이션, F&B·호스피탈리티 확장, 글로벌 라이센싱까지—Seoul &amp; HK MNGMT Co.는 엄밀한 분석과 실질적 성과로 귀사의 전략적 과제를 해결합니다.</p>
+    <a href="#capabilities" class="hero-read">서비스 전체 보기 →</a>
+  </div>
+  <div class="hero-indicators">
+    <div class="ind active"></div>
+    <div class="ind"></div>
+    <div class="ind"></div>
+  </div>
+</section>
+
+<!-- WHAT'S NEW -->
+<div class="whats-new">
+  <div class="wn-inner">
+    <div class="wn-label"><span>최신 인사이트</span></div>
+    <a href="#contact" class="wn-card">
+      <div class="wn-cat">M&A · 사모펀드</div>
+      <div class="wn-title">Secondary 시장 매각 전략: APAC 사모펀드 포트폴리오의 가치 극대화</div>
+      <div class="wn-date">2026년 3월</div>
+    </a>
+    <a href="#contact" class="wn-card">
+      <div class="wn-cat">AI · 디지털 트랜스포메이션</div>
+      <div class="wn-title">AI 전략의 필수 과제: 전략 수립과 ROI 실현 사이의 간극을 좁히다</div>
+      <div class="wn-date">2026년 2월</div>
+    </a>
+    <a href="#contact" class="wn-card">
+      <div class="wn-cat">F&B · 호스피탈리티</div>
+      <div class="wn-title">아시아 마스터 프랜차이즈: 브랜드 확장을 위한 최적 계약 구조 설계</div>
+      <div class="wn-date">2026년 1월</div>
+    </a>
+  </div>
+</div>
+
+<!-- FEATURED INSIGHTS -->
+<section class="section" id="insights">
+  <div class="section-label">주요 관점 및 인사이트</div>
+  <div class="featured-grid reveal">
+    <div class="feat-main">
+      <div>
+        <div class="feat-cat">핵심 관점 · Secondary 시장</div>
+        <h2 class="feat-title">Secondary 시장 매각 전략: APAC Exit 가치 창출의 새로운 패러다임</h2>
+        <p class="feat-body">전통적인 IPO 창구가 좁아지면서 Secondary 시장 거래는 APAC 전역 사모펀드 및 기업 벤처 포트폴리오의 주된 Exit 수단으로 부상하고 있습니다. Goldman Sachs·PwC 출신 전문가들이 모든 매각 프로세스에 직접 관여합니다.</p>
+      </div>
+      <a href="#contact" class="feat-link">전문가팀과 논의하기 →</a>
+    </div>
+    <div class="feat-side">
+      <div class="feat-card">
+        <div class="feat-cat">전사전략</div>
+        <div class="feat-title">격변의 시대, 전사전략 재설계: 비대칭적 성장 기회를 포착하는 법</div>
+        <div class="feat-body">APAC 선도 기업들이 비대칭 성장 기회를 포착하기 위해 전략적 기반을 어떻게 재구축하고 있는가.</div>
+        <a href="#contact" class="feat-link">자세히 보기 →</a>
+      </div>
+      <div class="feat-card">
+        <div class="feat-cat">AI · 메타버스</div>
+        <div class="feat-title">AI 전략에서 가치 창출로: 선도 기업과 뒤처진 기업을 가르는 결정적 차이</div>
+        <div class="feat-body">AI 도입은 가속화되고 있지만 측정 가능한 성과를 내는 기업은 소수입니다. 신호와 소음을 구분하는 프레임워크를 제시합니다.</div>
+        <a href="#contact" class="feat-link">자세히 보기 →</a>
+      </div>
+      <div class="feat-card">
+        <div class="feat-cat">F&B · 글로벌 라이센싱</div>
+        <div class="feat-title">K-F&B 웨이브: 문화적 모멘텀을 마스터 프랜차이즈 가치로 전환하는 전략</div>
+        <div class="feat-body">한국 브랜드에 대한 글로벌 수요는 전례 없는 수준입니다. 이제 문제는 확장 여부가 아니라 어떻게 구조화할 것인가입니다.</div>
+        <a href="#contact" class="feat-link">자세히 보기 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES STRIP -->
+<div class="cap-strip" id="capabilities">
+  <div class="cap-strip-inner">
+    <div class="cap-item active"><div class="cap-icon">⚡</div><div class="cap-name">M&A &amp;<br/>실사</div></div>
+    <div class="cap-item"><div class="cap-icon">🎯</div><div class="cap-name">전사<br/>전략</div></div>
+    <div class="cap-item"><div class="cap-icon">🤖</div><div class="cap-name">AI &amp;<br/>메타버스</div></div>
+    <div class="cap-item"><div class="cap-icon">🍽️</div><div class="cap-name">F&amp;B &amp;<br/>호스피탈리티</div></div>
+    <div class="cap-item"><div class="cap-icon">🔗</div><div class="cap-name">글로벌<br/>라이센싱</div></div>
+    <div class="cap-item"><div class="cap-icon">🏪</div><div class="cap-name">마스터<br/>프랜차이즈</div></div>
+    <div class="cap-item"><div class="cap-icon">📈</div><div class="cap-name">Secondary<br/>매각전략</div></div>
+    <div class="cap-item"><div class="cap-icon">💰</div><div class="cap-name">투자유치<br/>&amp; PE</div></div>
+  </div>
+</div>
+
+<!-- PRACTICE AREAS -->
+<section class="section">
+  <div class="section-label">주요 서비스</div>
+  <div class="practice-grid reveal">
+    <div class="practice-card"><div class="pc-badge">핵심</div><div class="pc-num">01</div><div class="pc-title">M&A · 인수합병</div><p class="pc-body">딜 소싱, 상업적 실사(Commercial DD), 밸류에이션, 협상 전략, 합병 후 통합(PMI)까지. PwC·Goldman Sachs 출신 CPA/CFA가 모든 인게이지먼트를 직접 리드합니다.</p><div class="pc-tag">M&A · PE · 실사</div><div class="pc-arrow">→</div></div>
+    <div class="practice-card"><div class="pc-badge">핵심</div><div class="pc-num">02</div><div class="pc-title">Secondary 시장 매각 전략</div><p class="pc-body">포트폴리오 지분의 Secondary 시장 매각: 최적 타이밍 결정, 바이어 발굴, 딜 구조화 및 가격 협상. 속도와 확실성을 원하는 APAC PE 포트폴리오의 선호 Exit 경로입니다.</p><div class="pc-tag">Secondary · Exit · PE</div><div class="pc-arrow">→</div></div>
+    <div class="practice-card"><div class="pc-badge">핵심</div><div class="pc-num">03</div><div class="pc-title">전사전략 · 경영혁신</div><p class="pc-body">C-Suite 의사결정을 위한 전사 전략 수립, 비즈니스 모델 재설계, 성장 로드맵, P&L 구조 최적화. 슬라이드 덱이 아닌 지속적 경쟁우위를 창출하는 전략을 만듭니다.</p><div class="pc-tag">전사전략 · 경영혁신</div><div class="pc-arrow">→</div></div>
+    <div class="practice-card"><div class="pc-badge">신성장</div><div class="pc-num">04</div><div class="pc-title">AI · 메타버스 트랜스포메이션</div><p class="pc-body">전사 AI 전략 수립, 디지털 트랜스포메이션 로드맵, IoT·빅데이터 통합, 메타버스 비즈니스 모델 설계. 기술 잠재력과 실질적 기업 가치 사이의 간극을 메웁니다.</p><div class="pc-tag">AI · 디지털 · 메타버스</div><div class="pc-arrow">→</div></div>
+    <div class="practice-card"><div class="pc-num">05</div><div class="pc-title">F&amp;B · 호스피탈리티 전략</div><p class="pc-body">F&B, 호텔, 리조트 브랜드의 아시아 시장 진입, 운영 효율화, 성장 전략. 홍콩이공대학교 호텔관광 학과 출신 전문가가 심층 지원합니다.</p><div class="pc-tag">F&B · 호텔 · 관광</div><div class="pc-arrow">→</div></div>
+    <div class="practice-card"><div class="pc-num">06</div><div class="pc-title">글로벌 라이센싱 · 마스터 프랜차이즈</div><p class="pc-body">ESG, 바이오, AI, 핀테크, F&B, 호텔 섹터의 마스터 프랜차이즈 계약 및 글로벌 라이센싱 구조 설계. 법률 아키텍처부터 운영 플랫폼 구축까지 엔드투엔드로 지원합니다.</p><div class="pc-tag">라이센싱 · 프랜차이즈 · IP</div><div class="pc-arrow">→</div></div>
+    <div class="practice-card"><div class="pc-num">07</div><div class="pc-title">투자 유치 · 자본 조달</div><p class="pc-body">시드부터 성장자본까지 스테이지별 투자자 매칭, IR 전략 수립, 텀시트 협상. 엔젤투자자, 패밀리오피스, VC, 기관 PE까지 광범위한 네트워크를 보유합니다.</p><div class="pc-tag">VC · PE · 투자유치</div><div class="pc-arrow">→</div></div>
+    <div class="practice-card"><div class="pc-num">08</div><div class="pc-title">운영 · 재무 · 인적자원</div><p class="pc-body">제로베이스 예산 수립, ERP 최적화, 가격 전략, 조직 설계. 단기 비용 절감과 구조적 운영 모델 혁신을 동시에 추진합니다.</p><div class="pc-tag">운영 · 재무 · HR</div><div class="pc-arrow">→</div></div>
+    <div class="practice-card"><div class="pc-num">09</div><div class="pc-title">법률 서비스 · 컴플라이언스</div><p class="pc-body">홍콩·한국 크로스보더 법인 설립, 세무 구조화, 규제 컴플라이언스. Deloitte·PwC 출신 CPA가 모든 구조를 방어 가능하게 설계합니다.</p><div class="pc-tag">법률 · 세무 · 컴플라이언스</div><div class="pc-arrow">→</div></div>
+  </div>
+</section>
+
+<!-- PERSPECTIVE -->
+<div class="perspective-pull">
+  <div class="pp-inner reveal">
+    <div>
+      <div class="section-label" style="margin-bottom:20px">당사의 관점</div>
+      <h2 class="pp-heading">APAC 리더십을 위한 전략적 명제</h2>
+    </div>
+    <div>
+      <p class="pp-blockquote">"아시아 태평양에서의 경쟁은 이제 규모의 싸움이 아닙니다. 전략적 정밀성(Strategic Precision)의 싸움입니다. 다음 10년을 정의할 기업은 더 많은 결정이 아니라 더 나은 결정을 내리는 기업입니다."</p>
+      <p class="pp-body">Seoul &amp; HK MNGMT Co.는 프라이빗 부티크로서, 모든 인게이지먼트에서 PwC·Goldman Sachs·Deloitte·Moody's 출신 시니어 전문가가 직접 클라이언트와 마주합니다. 파트너급 판단이 필요한 일을 주니어 어소시에이트에게 위임하지 않습니다.</p>
+      <p class="pp-body">홍콩 센트럴을 거점으로, 서울-APAC 코리도의 네트워크를 활용하여 한국 기업의 글로벌 확장과 글로벌 기업의 한국·GBA 진입을 동시에 지원하는 독보적인 포지션을 갖추고 있습니다.</p>
+      <a href="#contact" class="pp-link">초기 미팅 요청하기 →</a>
+    </div>
+  </div>
+</div>
+
+<!-- INDUSTRIES -->
+<section class="sectors" id="sectors">
+  <div class="sectors-h reveal">
+    <div>
+      <div class="section-label" style="margin-bottom:16px">산업 전문성</div>
+      <h2 class="sectors-h2">우리가<br/>집중하는 분야</h2>
+    </div>
+    <p class="sectors-note">깊이 있는 산업 지식은 우리 실무의 부수적 요소가 아닙니다—그것이 근간입니다. 바이오테크부터 F&B, 핀테크까지, 당사 전문가들은 수개월이 아닌 수년간 해당 섹터 내에서 커리어를 쌓아왔습니다.</p>
+  </div>
+  <div class="sectors-list reveal">
+    <div class="sector-row">
+      <div class="sector-n">i.</div>
+      <div class="sector-body"><div class="sector-name">F&amp;B · 호스피탈리티 · 호텔 &amp; 리조트</div><div class="sector-desc">아시아 전역 한국 및 글로벌 F&B·호텔 브랜드의 마스터 프랜차이즈 구조 설계, 글로벌 브랜드 라이센싱, 시장 진입 전략.</div></div>
+      <div class="sector-badge">핵심 집중</div>
+    </div>
+    <div class="sector-row">
+      <div class="sector-n">ii.</div>
+      <div class="sector-body"><div class="sector-name">AI · 메타버스 · 디지털 테크놀로지</div><div class="sector-desc">전사 AI 전략, 메타버스 비즈니스 모델 설계, 디지털 트랜스포메이션 실행. 기술을 실질적 주주 가치 창출의 동력으로 전환합니다.</div></div>
+      <div class="sector-badge">핵심 집중</div>
+    </div>
+    <div class="sector-row">
+      <div class="sector-n">iii.</div>
+      <div class="sector-body"><div class="sector-name">사모펀드 · M&amp;A · Secondary 시장</div><div class="sector-desc">상업적 실사, 딜 소싱, 포트폴리오 가치 향상, APAC PE 자산 Secondary 매각 전략.</div></div>
+      <div class="sector-badge">핵심 집중</div>
+    </div>
+    <div class="sector-row">
+      <div class="sector-n">iv.</div>
+      <div class="sector-body"><div class="sector-name">바이오테크 · 헬스케어 · 생명과학</div><div class="sector-desc">아시아 성장 시장을 타겟으로 하는 바이오테크·디지털 헬스 기업의 시장 진입 전략, 라이센싱, M&A 자문, 투자 유치.</div></div>
+      <div class="sector-badge">우선 집중</div>
+    </div>
+    <div class="sector-row">
+      <div class="sector-n">v.</div>
+      <div class="sector-body"><div class="sector-name">핀테크 · 크립토 · 디지털 자산</div><div class="sector-desc">핀테크 전략, 크립토 컴플라이언스 구조화, 디지털 자산 프레임워크. Goldman Sachs·PwC 출신이 탁월한 거래 깊이를 제공합니다.</div></div>
+      <div class="sector-badge">활성</div>
+    </div>
+    <div class="sector-row">
+      <div class="sector-n">vi.</div>
+      <div class="sector-body"><div class="sector-name">소비재 · 리테일 · 유통</div><div class="sector-desc">한국 소비재 브랜드의 크로스보더 확장 및 글로벌 리테일러의 APAC 진입 전략. 채널 전략, SCM 최적화, 가격 아키텍처.</div></div>
+      <div class="sector-badge">활성</div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team-section" id="team">
+  <div class="team-intro-row reveal">
+    <div>
+      <div class="section-label" style="margin-bottom:16px">리더십</div>
+      <h2 class="team-h2">조언자가 아닌,<br/>실무 전문가</h2>
+    </div>
+    <p class="team-note">PwC·Goldman Sachs·Deloitte·Moody's 출신 CPA·CFA 전문가들로 구성된 팀은 직접적인 실전 경험을 바탕으로 합니다. 모든 클라이언트 인게이지먼트는 섹터 전문성을 갖춘 시니어 전문가가 직접 리드하며—위임의 층위를 통해 관리되지 않습니다.</p>
+  </div>
+  <div class="team-grid reveal">
+    <div class="tm"><div class="tm-initial">F&B</div><div class="tm-role">F&amp;B · 호스피탈리티 · 관광 전문가</div><ul class="tm-creds"><li>홍콩이공대학교 – 호텔관광학</li><li>홍콩과기대학교 – MBA</li><li>글로벌 라이센싱 · 메타버스 전략</li><li>CFA</li></ul><span class="tm-spec">Hospitality · 라이센싱 · 프랜차이즈</span></div>
+    <div class="tm"><div class="tm-initial">FT</div><div class="tm-role">핀테크 · 디지털 자산 · 크립토 전문가</div><ul class="tm-creds"><li>홍콩중문대학교 – 법학석사(LLM)</li><li>홍콩과기대학교 – MBA</li><li>홍콩이공대학교 – 회계·금융</li><li>PwC 알럼너스 · CPA</li></ul><span class="tm-spec">FinTech · Crypto · 법률</span></div>
+    <div class="tm"><div class="tm-initial">M&A</div><div class="tm-role">M&amp;A · 실사 · 사모펀드 전문가</div><ul class="tm-creds"><li>홍콩대학교 – 회계·금융</li><li>홍콩과기대학교 – MBA</li><li>PwC 알럼너스</li><li>CPA · CFA · 사모펀드</li></ul><span class="tm-spec">M&A · PE · Secondary</span></div>
+    <div class="tm"><div class="tm-initial">INV</div><div class="tm-role">투자전략 · 크립토 전문가</div><ul class="tm-creds"><li>홍콩과기대학교 – MBA</li><li>Goldman Sachs 알럼너스</li><li>PwC 알럼너스</li><li>CPA</li></ul><span class="tm-spec">Crypto · 투자전략</span></div>
+    <div class="tm"><div class="tm-initial">LEG</div><div class="tm-role">법률 서비스 · 세무 · 크로스보더 전문가</div><ul class="tm-creds"><li>사우스오스트레일리아 주립대학교</li><li>홍콩과기대학교 – MBA</li><li>Deloitte 알럼나</li><li>CPA</li></ul><span class="tm-spec">법률 · 세무 · 크로스보더</span></div>
+    <div class="tm"><div class="tm-initial">RSK</div><div class="tm-role">리스크 관리 · 컴플라이언스 전문가</div><ul class="tm-creds"><li>홍콩중문대학교 – 회계·금융</li><li>홍콩과기대학교 – MBA</li><li>PwC · Moody's 알럼너스</li><li>CPA</li></ul><span class="tm-spec">리스크 · 컴플라이언스 · 거버넌스</span></div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <p class="cta-band-text">귀사의 <em>전략적 과제</em>를 저희 팀과 함께 논의할 준비가 되셨나요?</p>
+  <a href="#contact" class="cta-band-btn">미팅 요청하기</a>
+</div>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-l reveal">
+    <div class="section-label" style="margin-bottom:16px">문의</div>
+    <h2 class="contact-h2">기밀 상담 시작하기</h2>
+    <p class="contact-sub">모든 문의는 철저한 기밀로 처리됩니다. 전략적 과제의 성격을 공유해 주시면 초기 논의를 위한 최적의 전문가 팀 구성을 제안드리겠습니다.</p>
+    <div>
+      <div class="ci"><div class="ci-label">본사</div><div class="ci-val">Unit 2A, 17/F, Glenealy Tower<br/>No. 1 Glenealy, Central<br/>홍콩 특별행정구</div></div>
+      <div class="ci"><div class="ci-label">직통 전화</div><div class="ci-val"><a href="tel:+85297899458">+852 9789 9458</a></div></div>
+      <div class="ci"><div class="ci-label">이메일</div><div class="ci-val"><a href="mailto:info@seoulandhk.com">info@seoulandhk.com</a></div></div>
+      <div class="ci"><div class="ci-label">대표이사</div><div class="ci-val">Garbuja Pun Devi<br/><span style="font-size:.85rem;color:var(--mid)">개인정보 관리책임자: Shahi Shila</span></div></div>
+    </div>
+  </div>
+  <div class="contact-r reveal">
+    <div class="form-h">미팅 요청</div>
+    <div class="fr">
+      <div class="fg"><label>성함</label><input type="text" placeholder="이름을 입력해주세요"/></div>
+      <div class="fg"><label>회사명</label><input type="text" placeholder="소속 기관명"/></div>
+    </div>
+    <div class="fg"><label>이메일</label><input type="email" placeholder="업무용 이메일 주소"/></div>
+    <div class="fg"><label>관심 서비스</label><select><option value="">서비스 분야를 선택해주세요</option><option>M&A · 인수합병</option><option>Secondary 시장 매각 전략</option><option>전사전략 · 경영혁신</option><option>AI · 메타버스 트랜스포메이션</option><option>F&B · 호스피탈리티 전략</option><option>글로벌 라이센싱 · 마스터 프랜차이즈</option><option>투자 유치 · 자본 조달</option><option>법률 서비스 · 컴플라이언스</option><option>기타 전략 문의</option></select></div>
+    <div class="fg"><label>문의 내용</label><textarea placeholder="비즈니스 상황, 핵심 과제, 기대하는 성과를 간략히 설명해 주세요. 모든 정보는 엄격한 기밀로 유지됩니다."></textarea></div>
+    <button class="submit-btn">문의 제출하기 →</button>
+    <p class="submit-note">영업일 기준 24시간 이내 시니어 전문가가 직접 연락드립니다.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-top">
+      <div>
+        <div class="ft-brand-name">Seoul &amp; HK MNGMT Co.</div>
+        <p class="ft-brand-desc">프라이빗 부티크 전략 컨설팅 및 투자 운용 기업. 홍콩을 본사로, 서울-홍콩 듀얼 베이스 모델로 APAC 전역을 커버합니다.</p>
+      </div>
+      <div class="ft-col"><h4>서비스</h4><ul><li><a href="#">M&amp;A · 실사</a></li><li><a href="#">전사전략</a></li><li><a href="#">AI · 메타버스</a></li><li><a href="#">Secondary 전략</a></li></ul></div>
+      <div class="ft-col"><h4>산업</h4><ul><li><a href="#">F&amp;B · 호스피탈리티</a></li><li><a href="#">글로벌 라이센싱</a></li><li><a href="#">마스터 프랜차이즈</a></li><li><a href="#">핀테크 · 크립토</a></li></ul></div>
+      <div class="ft-col"><h4>회사</h4><ul><li><a href="#insights">인사이트</a></li><li><a href="#team">리더십</a></li><li><a href="#contact">문의하기</a></li><li><a href="#contact">오피스</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <div class="ft-copy">© 2026 Seoul &amp; Hong Kong Management Co. All rights reserved.</div>
+      <div class="ft-legal"><a href="#">개인정보처리방침</a><a href="#">이용약관</a><a href="#">사기 주의 안내</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── SCROLL REVEAL ──
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) setTimeout(() => e.target.classList.add('on'), i * 80);
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // ── CAP STRIP ACTIVE ──
+  document.querySelectorAll('.cap-item').forEach(item => {
+    item.addEventListener('click', () => {
+      document.querySelectorAll('.cap-item').forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+    });
+  });
+
+  // ── NAV SHADOW ──
+  window.addEventListener('scroll', () => {
+    document.querySelector('nav').style.boxShadow = window.scrollY > 10
+      ? '0 2px 12px rgba(0,0,0,.1)' : '0 1px 4px rgba(0,0,0,.06)';
+  });
+
+  // ── TRANSLATIONS ──
+  const T = {
+    ko: {
+      // util
+      util1: '문의하기', util2: '전문가팀', util3: '오피스',
+      // nav
+      nav1: '인사이트', nav2: '서비스', nav3: '산업', nav4: '리더십', nav5: '회사소개', navCta: '미팅 요청',
+      // hero
+      heroCategory: '전략 컨설팅 · APAC · 광둥·홍콩·마카오 대만구',
+      heroH1: '기업 리더들이<br/><em>경쟁우위를 확보하고</em><br/>아시아 태평양을 선도하도록',
+      heroSub: 'M&A와 Secondary 시장 매각 전략부터 AI 트랜스포메이션, F&B·호스피탈리티 확장, 글로벌 라이센싱까지—Seoul & HK MNGMT Co.는 엄밀한 분석과 실질적 성과로 귀사의 전략적 과제를 해결합니다.',
+      heroRead: '서비스 전체 보기 →',
+      // whats new
+      wnLabel: '최신 인사이트',
+      wnCat1: 'M&A · 사모펀드', wnTitle1: 'Secondary 시장 매각 전략: APAC 사모펀드 포트폴리오의 가치 극대화', wnDate1: '2026년 3월',
+      wnCat2: 'AI · 디지털 트랜스포메이션', wnTitle2: 'AI 전략의 필수 과제: 전략 수립과 ROI 실현 사이의 간극을 좁히다', wnDate2: '2026년 2월',
+      wnCat3: 'F&B · 호스피탈리티', wnTitle3: '아시아 마스터 프랜차이즈: 브랜드 확장을 위한 최적 계약 구조 설계', wnDate3: '2026년 1월',
+      // insights
+      insLabel: '주요 관점 및 인사이트',
+      featCat: '핵심 관점 · Secondary 시장',
+      featTitle: 'Secondary 시장 매각 전략: APAC Exit 가치 창출의 새로운 패러다임',
+      featBody: 'IPO 창구가 좁아지면서 Secondary 시장 거래는 APAC 전역 사모펀드·기업 벤처 포트폴리오의 주된 Exit 수단으로 부상하고 있습니다. Goldman Sachs·PwC 출신 전문가들이 모든 매각 프로세스에 직접 관여합니다.',
+      featLink: '전문가팀과 논의하기 →',
+      fc1Cat: '전사전략', fc1Title: '격변의 시대, 전사전략 재설계: 비대칭적 성장 기회를 포착하는 법', fc1Body: 'APAC 선도 기업들이 비대칭 성장 기회를 포착하기 위해 전략적 기반을 어떻게 재구축하고 있는가.', fc1Link: '자세히 보기 →',
+      fc2Cat: 'AI · 메타버스', fc2Title: 'AI 전략에서 가치 창출로: 선도 기업과 뒤처진 기업을 가르는 결정적 차이', fc2Body: 'AI 도입은 가속화되고 있지만 측정 가능한 성과를 내는 기업은 소수입니다. 신호와 소음을 구분하는 프레임워크를 제시합니다.', fc2Link: '자세히 보기 →',
+      fc3Cat: 'F&B · 글로벌 라이센싱', fc3Title: 'K-F&B 웨이브: 문화적 모멘텀을 마스터 프랜차이즈 가치로 전환하는 전략', fc3Body: '한국 브랜드에 대한 글로벌 수요는 전례 없는 수준입니다. 이제 문제는 확장 여부가 아니라 어떻게 구조화할 것인가입니다.', fc3Link: '자세히 보기 →',
+      // cap strip
+      cap1: 'M&A &<br/>실사', cap2: '전사<br/>전략', cap3: 'AI &<br/>메타버스', cap4: 'F&B &<br/>호스피탈리티', cap5: '글로벌<br/>라이센싱', cap6: '마스터<br/>프랜차이즈', cap7: 'Secondary<br/>매각전략', cap8: '투자유치<br/>& PE',
+      // practice
+      practiceLabel: '주요 서비스',
+      pc1Badge: '핵심', pc1Title: 'M&A · 인수합병', pc1Body: '딜 소싱, 상업적 실사(Commercial DD), 밸류에이션, 협상 전략, 합병 후 통합(PMI)까지. PwC·Goldman Sachs 출신 CPA/CFA가 모든 인게이지먼트를 직접 리드합니다.', pc1Tag: 'M&A · PE · 실사',
+      pc2Badge: '핵심', pc2Title: 'Secondary 시장 매각 전략', pc2Body: '포트폴리오 지분의 Secondary 시장 매각: 최적 타이밍 결정, 바이어 발굴, 딜 구조화 및 가격 협상. 속도와 확실성을 원하는 APAC PE 포트폴리오의 선호 Exit 경로입니다.', pc2Tag: 'Secondary · Exit · PE',
+      pc3Badge: '핵심', pc3Title: '전사전략 · 경영혁신', pc3Body: 'C-Suite 의사결정을 위한 전사 전략 수립, 비즈니스 모델 재설계, 성장 로드맵, P&L 구조 최적화. 슬라이드 덱이 아닌 지속적 경쟁우위를 창출하는 전략을 만듭니다.', pc3Tag: '전사전략 · 경영혁신',
+      pc4Badge: '신성장', pc4Title: 'AI · 메타버스 트랜스포메이션', pc4Body: '전사 AI 전략 수립, 디지털 트랜스포메이션 로드맵, IoT·빅데이터 통합, 메타버스 비즈니스 모델 설계. 기술 잠재력과 실질적 기업 가치 사이의 간극을 메웁니다.', pc4Tag: 'AI · 디지털 · 메타버스',
+      pc5Title: 'F&B · 호스피탈리티 전략', pc5Body: 'F&B, 호텔, 리조트 브랜드의 아시아 시장 진입, 운영 효율화, 성장 전략. 홍콩이공대학교 호텔관광 학과 출신 전문가가 심층 지원합니다.', pc5Tag: 'F&B · 호텔 · 관광',
+      pc6Title: '글로벌 라이센싱 · 마스터 프랜차이즈', pc6Body: 'ESG, 바이오, AI, 핀테크, F&B, 호텔 섹터의 마스터 프랜차이즈 계약 및 글로벌 라이센싱 구조 설계. 법률 아키텍처부터 운영 플랫폼 구축까지 엔드투엔드로 지원합니다.', pc6Tag: '라이센싱 · 프랜차이즈 · IP',
+      pc7Title: '투자 유치 · 자본 조달', pc7Body: '시드부터 성장자본까지 스테이지별 투자자 매칭, IR 전략 수립, 텀시트 협상. 엔젤투자자, 패밀리오피스, VC, 기관 PE까지 광범위한 네트워크를 보유합니다.', pc7Tag: 'VC · PE · 투자유치',
+      pc8Title: '운영 · 재무 · 인적자원', pc8Body: '제로베이스 예산 수립, ERP 최적화, 가격 전략, 조직 설계. 단기 비용 절감과 구조적 운영 모델 혁신을 동시에 추진합니다.', pc8Tag: '운영 · 재무 · HR',
+      pc9Title: '법률 서비스 · 컴플라이언스', pc9Body: '홍콩·한국 크로스보더 법인 설립, 세무 구조화, 규제 컴플라이언스. Deloitte·PwC 출신 CPA가 모든 구조를 방어 가능하게 설계합니다.', pc9Tag: '법률 · 세무 · 컴플라이언스',
+      // perspective
+      perspLabel: '당사의 관점',
+      perspH: 'APAC 리더십을 위한 전략적 명제',
+      perspQuote: '"아시아 태평양에서의 경쟁은 이제 규모의 싸움이 아닙니다. 전략적 정밀성(Strategic Precision)의 싸움입니다. 다음 10년을 정의할 기업은 더 많은 결정이 아니라 더 나은 결정을 내리는 기업입니다."',
+      perspBody1: 'Seoul & HK MNGMT Co.는 프라이빗 부티크로서, 모든 인게이지먼트에서 PwC·Goldman Sachs·Deloitte·Moody\'s 출신 시니어 전문가가 직접 클라이언트와 마주합니다. 파트너급 판단이 필요한 일을 주니어 어소시에이트에게 위임하지 않습니다.',
+      perspBody2: '홍콩 센트럴을 거점으로, 서울-APAC 코리도의 네트워크를 활용하여 한국 기업의 글로벌 확장과 글로벌 기업의 한국·GBA 진입을 동시에 지원하는 독보적인 포지션을 갖추고 있습니다.',
+      perspLink: '초기 미팅 요청하기 →',
+      // sectors
+      sectorsLabel: '산업 전문성',
+      sectorsH: '우리가<br/>집중하는 분야',
+      sectorsNote: '깊이 있는 산업 지식은 우리 실무의 부수적 요소가 아닙니다—그것이 근간입니다. 바이오테크부터 F&B, 핀테크까지, 당사 전문가들은 수개월이 아닌 수년간 해당 섹터 내에서 커리어를 쌓아왔습니다.',
+      s1Name: 'F&B · 호스피탈리티 · 호텔 & 리조트', s1Desc: '아시아 전역 한국 및 글로벌 F&B·호텔 브랜드의 마스터 프랜차이즈 구조 설계, 글로벌 브랜드 라이센싱, 시장 진입 전략.', s1Badge: '핵심 집중',
+      s2Name: 'AI · 메타버스 · 디지털 테크놀로지', s2Desc: '전사 AI 전략, 메타버스 비즈니스 모델 설계, 디지털 트랜스포메이션 실행. 기술을 실질적 주주 가치 창출의 동력으로 전환합니다.', s2Badge: '핵심 집중',
+      s3Name: '사모펀드 · M&A · Secondary 시장', s3Desc: '상업적 실사, 딜 소싱, 포트폴리오 가치 향상, APAC PE 자산 Secondary 매각 전략.', s3Badge: '핵심 집중',
+      s4Name: '바이오테크 · 헬스케어 · 생명과학', s4Desc: '아시아 성장 시장을 타겟으로 하는 바이오테크·디지털 헬스 기업의 시장 진입 전략, 라이센싱, M&A 자문, 투자 유치.', s4Badge: '우선 집중',
+      s5Name: '핀테크 · 크립토 · 디지털 자산', s5Desc: '핀테크 전략, 크립토 컴플라이언스 구조화, 디지털 자산 프레임워크. Goldman Sachs·PwC 출신이 탁월한 거래 깊이를 제공합니다.', s5Badge: '활성',
+      s6Name: '소비재 · 리테일 · 유통', s6Desc: '한국 소비재 브랜드의 크로스보더 확장 및 글로벌 리테일러의 APAC 진입 전략. 채널 전략, SCM 최적화, 가격 아키텍처.', s6Badge: '활성',
+      // team
+      teamLabel: '리더십',
+      teamH: '조언자가 아닌,<br/>실무 전문가',
+      teamNote: 'PwC·Goldman Sachs·Deloitte·Moody\'s 출신 CPA·CFA 전문가들로 구성된 팀은 직접적인 실전 경험을 바탕으로 합니다. 모든 클라이언트 인게이지먼트는 섹터 전문성을 갖춘 시니어 전문가가 직접 리드합니다.',
+      tm1Role: 'F&B · 호스피탈리티 · 관광 전문가', tm1c1: '홍콩이공대학교 – 호텔관광학', tm1c2: '홍콩과기대학교 – MBA', tm1c3: '글로벌 라이센싱 · 메타버스 전략', tm1c4: 'CFA', tm1Spec: 'Hospitality · 라이센싱 · 프랜차이즈',
+      tm2Role: '핀테크 · 디지털 자산 · 크립토 전문가', tm2c1: '홍콩중문대학교 – 법학석사(LLM)', tm2c2: '홍콩과기대학교 – MBA', tm2c3: '홍콩이공대학교 – 회계·금융', tm2c4: 'PwC 알럼너스 · CPA', tm2Spec: 'FinTech · Crypto · 법률',
+      tm3Role: 'M&A · 실사 · 사모펀드 전문가', tm3c1: '홍콩대학교 – 회계·금융', tm3c2: '홍콩과기대학교 – MBA', tm3c3: 'PwC 알럼너스', tm3c4: 'CPA · CFA · 사모펀드', tm3Spec: 'M&A · PE · Secondary',
+      tm4Role: '투자전략 · 크립토 전문가', tm4c1: '홍콩과기대학교 – MBA', tm4c2: 'Goldman Sachs 알럼너스', tm4c3: 'PwC 알럼너스', tm4c4: 'CPA', tm4Spec: 'Crypto · 투자전략',
+      tm5Role: '법률 서비스 · 세무 · 크로스보더 전문가', tm5c1: '사우스오스트레일리아 주립대학교', tm5c2: '홍콩과기대학교 – MBA', tm5c3: 'Deloitte 알럼나', tm5c4: 'CPA', tm5Spec: '법률 · 세무 · 크로스보더',
+      tm6Role: '리스크 관리 · 컴플라이언스 전문가', tm6c1: '홍콩중문대학교 – 회계·금융', tm6c2: '홍콩과기대학교 – MBA', tm6c3: 'PwC · Moody\'s 알럼너스', tm6c4: 'CPA', tm6Spec: '리스크 · 컴플라이언스 · 거버넌스',
+      // cta
+      ctaText: '귀사의 <em>전략적 과제</em>를 저희 팀과 함께 논의할 준비가 되셨나요?',
+      ctaBtn: '미팅 요청하기',
+      // contact
+      contactLabel: '문의',
+      contactH: '기밀 상담 시작하기',
+      contactSub: '모든 문의는 철저한 기밀로 처리됩니다. 전략적 과제의 성격을 공유해 주시면 초기 논의를 위한 최적의 전문가 팀 구성을 제안드리겠습니다.',
+      hq: '본사', hqVal: 'Unit 2A, 17/F, Glenealy Tower<br/>No. 1 Glenealy, Central<br/>홍콩 특별행정구',
+      phone: '직통 전화', email: '이메일', director: '대표이사',
+      dirVal: 'Garbuja Pun Devi<br/><span style="font-size:.85rem;color:var(--mid)">개인정보 관리책임자: Shahi Shila</span>',
+      formH: '미팅 요청',
+      fName: '성함', fNamePh: '이름을 입력해주세요',
+      fCo: '회사명', fCoPh: '소속 기관명',
+      fEmail: '이메일', fEmailPh: '업무용 이메일 주소',
+      fInterest: '관심 서비스',
+      fOpts: ['서비스 분야를 선택해주세요','M&A · 인수합병','Secondary 시장 매각 전략','전사전략 · 경영혁신','AI · 메타버스 트랜스포메이션','F&B · 호스피탈리티 전략','글로벌 라이센싱 · 마스터 프랜차이즈','투자 유치 · 자본 조달','법률 서비스 · 컴플라이언스','기타 전략 문의'],
+      fMsg: '문의 내용', fMsgPh: '비즈니스 상황, 핵심 과제, 기대하는 성과를 간략히 설명해 주세요. 모든 정보는 엄격한 기밀로 유지됩니다.',
+      fBtn: '문의 제출하기 →', fNote: '영업일 기준 24시간 이내 시니어 전문가가 직접 연락드립니다.',
+      // footer
+      ftDesc: '프라이빗 부티크 전략 컨설팅 및 투자 운용 기업. 홍콩을 본사로, 서울-홍콩 듀얼 베이스 모델로 APAC 전역을 커버합니다.',
+      ftCap: '서비스', ftCapLinks: ['M&A · 실사','전사전략','AI · 메타버스','Secondary 전략'],
+      ftInd: '산업', ftIndLinks: ['F&B · 호스피탈리티','글로벌 라이센싱','마스터 프랜차이즈','핀테크 · 크립토'],
+      ftCo: '회사', ftCoLinks: ['인사이트','리더십','문의하기','오피스'],
+      ftPrivacy: '개인정보처리방침', ftTerms: '이용약관', ftFraud: '사기 주의 안내',
+    },
+    en: {
+      util1: 'Contact', util2: 'Our Team', util3: 'Offices',
+      nav1: 'Insights', nav2: 'Capabilities', nav3: 'Industries', nav4: 'Leadership', nav5: 'About', navCta: 'Contact Us',
+      heroCategory: 'Strategy Consulting · APAC · Greater Bay Area',
+      heroH1: 'We Help Business Leaders<br/><em>Seize Competitive Advantage</em><br/>Across Asia Pacific',
+      heroSub: 'From M&A and Secondary market exit strategy to AI transformation, F&B & Hospitality expansion, and Global Licensing—Seoul & HK MNGMT Co. delivers rigorous analysis and practical results with real impact.',
+      heroRead: 'Explore Our Capabilities →',
+      wnLabel: "What's New",
+      wnCat1: 'M&A · Private Equity', wnTitle1: 'Secondary Market Exit Strategy: Unlocking Value in APAC Private Equity Portfolios', wnDate1: 'March 2026',
+      wnCat2: 'AI · Digital Transformation', wnTitle2: 'The AI Imperative: Bridging Strategy and ROI in Asian Enterprises', wnDate2: 'February 2026',
+      wnCat3: 'F&B · Hospitality', wnTitle3: 'Master Franchise in Asia: Structuring the Right Deal for Brand Expansion', wnDate3: 'January 2026',
+      insLabel: 'Featured Perspectives',
+      featCat: 'Lead Perspective · Secondary Markets',
+      featTitle: 'Secondary Market Selling Strategy: A New Paradigm for Exit Value in APAC',
+      featBody: 'As traditional IPO windows narrow, secondary market transactions are emerging as the dominant exit vehicle for private equity and corporate venture portfolios across Asia Pacific. Goldman Sachs and PwC alumni at Seoul & HK bring transactional depth to every mandate.',
+      featLink: 'Discuss with Our Team →',
+      fc1Cat: 'Corporate Strategy', fc1Title: 'Enterprise Strategy in an Era of Disruption: Reframing the Growth Agenda', fc1Body: 'How leading APAC businesses are rebuilding their strategic foundations to capture asymmetric growth opportunities.', fc1Link: 'Read more →',
+      fc2Cat: 'AI · Metaverse', fc2Title: 'From AI Strategy to Value: What Separates Leaders from Laggards', fc2Body: 'AI adoption is accelerating—but measurable returns remain elusive for most. Our framework separates signal from noise.', fc2Link: 'Read more →',
+      fc3Cat: 'F&B · Global Licensing', fc3Title: 'The Korean F&B Wave: Turning Cultural Momentum into Master Franchise Value', fc3Body: 'Korean brands command unprecedented global demand. The question is no longer whether to expand—but how to structure it.', fc3Link: 'Read more →',
+      cap1: 'M&A &<br/>Due Diligence', cap2: 'Corporate<br/>Strategy', cap3: 'AI &<br/>Metaverse', cap4: 'F&B &<br/>Hospitality', cap5: 'Global<br/>Licensing', cap6: 'Master<br/>Franchise', cap7: 'Secondary<br/>Strategy', cap8: 'Fundraising<br/>& PE',
+      practiceLabel: 'What We Do',
+      pc1Badge: 'Core', pc1Title: 'M&A · Mergers & Acquisitions', pc1Body: 'Deal origination, commercial due diligence, valuation, negotiation strategy, and post-merger integration. PwC and Goldman Sachs alumni with CPA/CFA designation lead every engagement.', pc1Tag: 'M&A · PE · DD',
+      pc2Badge: 'Core', pc2Title: 'Secondary Market Selling Strategy', pc2Body: 'Portfolio divestiture via secondary markets: optimal timing, buyer identification, deal structuring and price negotiation. The preferred exit path for APAC PE portfolios demanding speed and certainty.', pc2Tag: 'Secondary · Exit · PE',
+      pc3Badge: 'Core', pc3Title: 'Corporate & Enterprise Strategy', pc3Body: 'C-suite strategy development, business model redesign, growth roadmaps, and P&L restructuring. We build strategies that translate into sustained competitive advantage—not slide decks.', pc3Tag: 'Strategy · Transformation',
+      pc4Badge: 'Emerging', pc4Title: 'AI & Metaverse Transformation', pc4Body: 'Enterprise AI strategy, digital transformation roadmaps, IoT/big data integration, and metaverse business model design. We bridge the gap between technology potential and measurable business value.', pc4Tag: 'AI · Digital · Metaverse',
+      pc5Title: 'F&B · Hospitality Strategy', pc5Body: "Market entry, operational efficiency, and growth strategy for F&B, hotel, and resort brands across Asia. Our team holds direct expertise from The Hong Kong Polytechnic University's hotel management programme.", pc5Tag: 'F&B · Hotel · Tourism',
+      pc6Title: 'Global Licensing · Master Franchise', pc6Body: 'Structuring and negotiating master franchise agreements and global licensing deals across ESG, biotech, AI, fintech, F&B and hotel sectors. End-to-end from legal architecture to operational platform build.', pc6Tag: 'Licensing · Franchise · IP',
+      pc7Title: 'Fundraising · Capital Advisory', pc7Body: 'Investor matching across seed through growth capital stages, IR strategy, and term sheet negotiation. Our network spans angel investors, family offices, VC and institutional PE.', pc7Tag: 'VC · PE · Fundraising',
+      pc8Title: 'Operations · Finance · HR', pc8Body: 'Zero-base budgeting, ERP optimization, pricing strategy, and organizational design. Short-term cost improvement combined with structural operating model transformation.', pc8Tag: 'Operations · Finance · HR',
+      pc9Title: 'Legal Services · Compliance', pc9Body: 'Cross-border entity structuring, tax optimization, and regulatory compliance for Hong Kong and Korea. Deloitte and PwC alumni with CPA credentials ensure every structure is defensible.', pc9Tag: 'Legal · Tax · Compliance',
+      perspLabel: 'Our Perspective',
+      perspH: 'The Strategic Imperative for APAC Leadership',
+      perspQuote: '"Competition in Asia Pacific is no longer a question of scale—it is a question of strategic precision. The firms that will define the next decade are those who make fewer, better decisions."',
+      perspBody1: "Seoul & HK MNGMT Co. operates as a private boutique—which means our clients receive the direct attention of senior practitioners with PwC, Goldman Sachs, Deloitte and Moody's backgrounds on every mandate. We do not delegate to junior associates what demands partner-level judgment.",
+      perspBody2: "Anchored in Hong Kong's Central district and drawing on the Seoul-APAC corridor, we are uniquely positioned to support both outbound Korean expansion and inbound global entry across the Greater Bay Area.",
+      perspLink: 'Request an Initial Meeting →',
+      sectorsLabel: 'Industries',
+      sectorsH: 'Where We<br/>Focus',
+      sectorsNote: 'Deep industry knowledge is not incidental to our practice—it is the foundation. From biotech to F&B to fintech, our practitioners have spent careers, not months, inside these sectors.',
+      s1Name: 'F&B · Hospitality · Hotels & Resorts', s1Desc: 'Master franchise structuring, global brand licensing, and market entry for Korean and global F&B and hotel brands across Asia.', s1Badge: 'Core Focus',
+      s2Name: 'AI · Metaverse · Digital Technology', s2Desc: 'Enterprise AI strategy, metaverse business model design, and digital transformation execution. Technology as a driver of tangible shareholder value.', s2Badge: 'Core Focus',
+      s3Name: 'Private Equity · M&A · Secondary Markets', s3Desc: 'Commercial due diligence, deal sourcing, portfolio value enhancement, and secondary exit strategy for PE-backed assets across APAC.', s3Badge: 'Core Focus',
+      s4Name: 'Biotech · Healthcare · Life Sciences', s4Desc: 'Market entry strategy, licensing, M&A advisory, and fundraising for biotech and digital health companies targeting the Asian growth market.', s4Badge: 'Priority',
+      s5Name: 'Fintech · Crypto · Digital Assets', s5Desc: 'Fintech strategy, crypto compliance structuring, and digital asset frameworks. Goldman Sachs and PwC alumni bring unmatched transactional depth.', s5Badge: 'Active',
+      s6Name: 'Consumer · Retail · Distribution', s6Desc: 'Cross-border expansion strategy for Korean consumer brands and APAC entry for global retailers. Channel strategy, SCM optimization, and pricing architecture.', s6Badge: 'Active',
+      teamLabel: 'Leadership',
+      teamH: 'Practitioners,<br/>Not Advisors',
+      teamNote: "Our team of CPA and CFA-credentialed professionals brings direct experience from PwC, Goldman Sachs, Deloitte and Moody's. Every client engagement is led by a senior practitioner with sector-specific depth—not managed through layers of delegation.",
+      tm1Role: 'F&B · Hospitality · Tourism Specialist', tm1c1: 'The Hong Kong Polytechnic University – Hotel & Tourism Mgmt', tm1c2: 'HKUST – MBA', tm1c3: 'Global Licensing · Metaverse Strategy', tm1c4: 'CFA', tm1Spec: 'Hospitality · Licensing · Franchise',
+      tm2Role: 'Fintech · Digital Assets · Crypto', tm2c1: 'CUHK – LLM (Law)', tm2c2: 'HKUST – MBA', tm2c3: 'HKPU – Accounting & Finance', tm2c4: 'PwC Alumnus · CPA', tm2Spec: 'FinTech · Crypto · Legal',
+      tm3Role: 'M&A · Due Diligence · Private Equity', tm3c1: 'HKU – Accounting & Finance', tm3c2: 'HKUST – MBA', tm3c3: 'PwC Alumnus', tm3c4: 'CPA · CFA · Private Equity', tm3Spec: 'M&A · PE · Secondary Markets',
+      tm4Role: 'Investment Strategy · Crypto', tm4c1: 'HKUST – MBA', tm4c2: 'Goldman Sachs Alumnus', tm4c3: 'PwC Alumnus', tm4c4: 'CPA', tm4Spec: 'Crypto · Investment Strategy',
+      tm5Role: 'Legal Services · Tax · Cross-Border', tm5c1: 'University of South Australia', tm5c2: 'HKUST – MBA', tm5c3: 'Deloitte Alumna', tm5c4: 'CPA', tm5Spec: 'Legal · Tax · Cross-Border',
+      tm6Role: 'Risk Management · Compliance', tm6c1: 'CUHK – Accounting & Finance', tm6c2: 'HKUST – MBA', tm6c3: "PwC · Moody's Alumnus", tm6c4: 'CPA', tm6Spec: 'Risk · Compliance · Governance',
+      ctaText: 'Ready to discuss your <em>strategic challenge</em> with our team?',
+      ctaBtn: 'Request a Meeting',
+      contactLabel: 'Contact',
+      contactH: 'Start a Confidential Conversation',
+      contactSub: 'All enquiries are treated with strict confidentiality. Share the nature of your strategic challenge and we will propose the right team configuration for an initial discussion.',
+      hq: 'Headquarters', hqVal: 'Unit 2A, 17/F, Glenealy Tower<br/>No. 1 Glenealy, Central<br/>Hong Kong S.A.R.',
+      phone: 'Direct Line', email: 'Email', director: 'Director',
+      dirVal: 'Garbuja Pun Devi<br/><span style="font-size:.85rem;color:var(--mid)">Personal Information Manager: Shahi Shila</span>',
+      formH: 'Request a Meeting',
+      fName: 'Name', fNamePh: 'Full name',
+      fCo: 'Company', fCoPh: 'Organisation',
+      fEmail: 'Email', fEmailPh: 'Business email',
+      fInterest: 'Primary Interest',
+      fOpts: ['Select a service area','M&A · Mergers & Acquisitions','Secondary Market Selling Strategy','Corporate & Enterprise Strategy','AI · Metaverse Transformation','F&B · Hospitality Strategy','Global Licensing · Master Franchise','Fundraising · Capital Advisory','Legal Services · Compliance','Other Strategic Inquiry'],
+      fMsg: 'Brief Overview', fMsgPh: 'Describe your business situation, key challenge, and desired outcomes. All information is treated as strictly confidential.',
+      fBtn: 'Submit Request →', fNote: 'A senior practitioner will respond within one business day.',
+      ftDesc: 'A private boutique strategy consulting and investment management firm. Headquartered in Hong Kong, operating across APAC with a Seoul-Hong Kong dual-base model.',
+      ftCap: 'Capabilities', ftCapLinks: ['M&A · Due Diligence','Corporate Strategy','AI · Metaverse','Secondary Markets'],
+      ftInd: 'Industries', ftIndLinks: ['F&B · Hospitality','Global Licensing','Master Franchise','Fintech · Crypto'],
+      ftCo: 'Company', ftCoLinks: ['Perspectives','Leadership','Contact','Offices'],
+      ftPrivacy: 'Privacy Policy', ftTerms: 'Terms of Use', ftFraud: 'Fraud Alert',
+    }
+  };
+
+  function setLang(lang) {
+    const t = T[lang];
+    // body font
+    document.body.classList.toggle('lang-en', lang === 'en');
+    // buttons
+    document.getElementById('btn-ko').classList.toggle('active', lang === 'ko');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    // util
+    const ua = document.querySelectorAll('.util-bar a');
+    ua[0].textContent = t.util1; ua[1].textContent = t.util2; ua[2].textContent = t.util3;
+    // nav
+    const nl = document.querySelectorAll('.nav-links a');
+    nl[0].textContent = t.nav1; nl[1].textContent = t.nav2; nl[2].textContent = t.nav3; nl[3].textContent = t.nav4; nl[4].textContent = t.nav5;
+    document.querySelector('.nav-cta').textContent = t.navCta;
+    // hero
+    document.querySelector('.hero-category').textContent = t.heroCategory;
+    document.querySelector('.hero-h1').innerHTML = t.heroH1;
+    document.querySelector('.hero-sub').innerHTML = t.heroSub;
+    document.querySelector('.hero-read').textContent = t.heroRead;
+    // whats new
+    document.querySelector('.wn-label span').textContent = t.wnLabel;
+    const wc = document.querySelectorAll('.wn-card');
+    [[t.wnCat1,t.wnTitle1,t.wnDate1],[t.wnCat2,t.wnTitle2,t.wnDate2],[t.wnCat3,t.wnTitle3,t.wnDate3]].forEach(([c,ti,d],i)=>{
+      wc[i].querySelector('.wn-cat').textContent = c;
+      wc[i].querySelector('.wn-title').textContent = ti;
+      wc[i].querySelector('.wn-date').textContent = d;
+    });
+    // insights
+    document.querySelectorAll('.section-label')[0].textContent = t.insLabel;
+    document.querySelector('.feat-cat').textContent = t.featCat;
+    document.querySelector('.feat-title').textContent = t.featTitle;
+    document.querySelector('.feat-body').textContent = t.featBody;
+    document.querySelector('.feat-link').textContent = t.featLink;
+    const fc = document.querySelectorAll('.feat-card');
+    [[t.fc1Cat,t.fc1Title,t.fc1Body,t.fc1Link],[t.fc2Cat,t.fc2Title,t.fc2Body,t.fc2Link],[t.fc3Cat,t.fc3Title,t.fc3Body,t.fc3Link]].forEach(([c,ti,b,l],i)=>{
+      fc[i].querySelector('.feat-cat').textContent = c;
+      fc[i].querySelector('.feat-title').textContent = ti;
+      fc[i].querySelector('.feat-body').textContent = b;
+      fc[i].querySelector('.feat-link').textContent = l;
+    });
+    // cap strip
+    const caps = document.querySelectorAll('.cap-name');
+    [t.cap1,t.cap2,t.cap3,t.cap4,t.cap5,t.cap6,t.cap7,t.cap8].forEach((c,i) => caps[i].innerHTML = c);
+    // practice
+    document.querySelectorAll('.section-label')[1].textContent = t.practiceLabel;
+    const pc = document.querySelectorAll('.practice-card');
+    const pd = [
+      [t.pc1Badge,t.pc1Title,t.pc1Body,t.pc1Tag],
+      [t.pc2Badge,t.pc2Title,t.pc2Body,t.pc2Tag],
+      [t.pc3Badge,t.pc3Title,t.pc3Body,t.pc3Tag],
+      [t.pc4Badge,t.pc4Title,t.pc4Body,t.pc4Tag],
+      [null,t.pc5Title,t.pc5Body,t.pc5Tag],
+      [null,t.pc6Title,t.pc6Body,t.pc6Tag],
+      [null,t.pc7Title,t.pc7Body,t.pc7Tag],
+      [null,t.pc8Title,t.pc8Body,t.pc8Tag],
+      [null,t.pc9Title,t.pc9Body,t.pc9Tag],
+    ];
+    pd.forEach(([badge,title,body,tag],i) => {
+      if(badge) pc[i].querySelector('.pc-badge').textContent = badge;
+      pc[i].querySelector('.pc-title').textContent = title;
+      pc[i].querySelector('.pc-body').textContent = body;
+      pc[i].querySelector('.pc-tag').textContent = tag;
+    });
+    // perspective
+    document.querySelectorAll('.section-label')[2].textContent = t.perspLabel;
+    document.querySelector('.pp-heading').textContent = t.perspH;
+    document.querySelector('.pp-blockquote').textContent = t.perspQuote;
+    const ppBodies = document.querySelectorAll('.pp-body');
+    ppBodies[0].textContent = t.perspBody1; ppBodies[1].textContent = t.perspBody2;
+    document.querySelector('.pp-link').textContent = t.perspLink;
+    // sectors
+    document.querySelectorAll('.section-label')[3].textContent = t.sectorsLabel;
+    document.querySelector('.sectors-h2').innerHTML = t.sectorsH;
+    document.querySelector('.sectors-note').textContent = t.sectorsNote;
+    const sr = document.querySelectorAll('.sector-row');
+    [[t.s1Name,t.s1Desc,t.s1Badge],[t.s2Name,t.s2Desc,t.s2Badge],[t.s3Name,t.s3Desc,t.s3Badge],[t.s4Name,t.s4Desc,t.s4Badge],[t.s5Name,t.s5Desc,t.s5Badge],[t.s6Name,t.s6Desc,t.s6Badge]].forEach(([n,d,b],i) => {
+      sr[i].querySelector('.sector-name').textContent = n;
+      sr[i].querySelector('.sector-desc').textContent = d;
+      sr[i].querySelector('.sector-badge').textContent = b;
+    });
+    // team
+    document.querySelectorAll('.section-label')[4].textContent = t.teamLabel;
+    document.querySelector('.team-h2').innerHTML = t.teamH;
+    document.querySelector('.team-note').textContent = t.teamNote;
+    const tm = document.querySelectorAll('.tm');
+    const td = [
+      [t.tm1Role,[t.tm1c1,t.tm1c2,t.tm1c3,t.tm1c4],t.tm1Spec],
+      [t.tm2Role,[t.tm2c1,t.tm2c2,t.tm2c3,t.tm2c4],t.tm2Spec],
+      [t.tm3Role,[t.tm3c1,t.tm3c2,t.tm3c3,t.tm3c4],t.tm3Spec],
+      [t.tm4Role,[t.tm4c1,t.tm4c2,t.tm4c3,t.tm4c4],t.tm4Spec],
+      [t.tm5Role,[t.tm5c1,t.tm5c2,t.tm5c3,t.tm5c4],t.tm5Spec],
+      [t.tm6Role,[t.tm6c1,t.tm6c2,t.tm6c3,t.tm6c4],t.tm6Spec],
+    ];
+    td.forEach(([role,creds,spec],i) => {
+      tm[i].querySelector('.tm-role').textContent = role;
+      const lis = tm[i].querySelectorAll('.tm-creds li');
+      creds.forEach((c,j) => lis[j].textContent = c);
+      tm[i].querySelector('.tm-spec').textContent = spec;
+    });
+    // cta
+    document.querySelector('.cta-band-text').innerHTML = t.ctaText;
+    document.querySelector('.cta-band-btn').textContent = t.ctaBtn;
+    // contact
+    document.querySelectorAll('.section-label')[5].textContent = t.contactLabel;
+    document.querySelector('.contact-h2').textContent = t.contactH;
+    document.querySelector('.contact-sub').textContent = t.contactSub;
+    const cil = document.querySelectorAll('.ci-label');
+    cil[0].textContent = t.hq; cil[1].textContent = t.phone; cil[2].textContent = t.email; cil[3].textContent = t.director;
+    document.querySelectorAll('.ci-val')[0].innerHTML = t.hqVal;
+    document.querySelectorAll('.ci-val')[3].innerHTML = t.dirVal;
+    document.querySelector('.form-h').textContent = t.formH;
+    const fLabels = document.querySelectorAll('.fg label');
+    fLabels[0].textContent = t.fName; fLabels[1].textContent = t.fCo;
+    fLabels[2].textContent = t.fEmail; fLabels[3].textContent = t.fInterest; fLabels[4].textContent = t.fMsg;
+    document.querySelectorAll('.fg input')[0].placeholder = t.fNamePh;
+    document.querySelectorAll('.fg input')[1].placeholder = t.fCoPh;
+    document.querySelectorAll('.fg input')[2].placeholder = t.fEmailPh;
+    document.querySelector('.fg textarea').placeholder = t.fMsgPh;
+    const sel = document.querySelector('.fg select');
+    t.fOpts.forEach((o,i) => sel.options[i].text = o);
+    document.querySelector('.submit-btn').textContent = t.fBtn;
+    document.querySelector('.submit-note').textContent = t.fNote;
+    // footer
+    document.querySelector('.ft-brand-desc').textContent = t.ftDesc;
+    const ftCols = document.querySelectorAll('.ft-col');
+    ftCols[0].querySelector('h4').textContent = t.ftCap;
+    ftCols[1].querySelector('h4').textContent = t.ftInd;
+    ftCols[2].querySelector('h4').textContent = t.ftCo;
+    [t.ftCapLinks,t.ftIndLinks,t.ftCoLinks].forEach((links,ci) => {
+      const lis = ftCols[ci].querySelectorAll('a');
+      links.forEach((l,i) => lis[i].textContent = l);
+    });
+    const ftLegal = document.querySelectorAll('.ft-legal a');
+    ftLegal[0].textContent = t.ftPrivacy; ftLegal[1].textContent = t.ftTerms; ftLegal[2].textContent = t.ftFraud;
+  }
+</script>
+</body>
+</html>
