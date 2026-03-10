@@ -931,4 +931,13 @@
     ftCols[2].querySelector('h4').textContent = t.ftCo;
     [t.ftCapLinks,t.ftIndLinks,t.ftCoLinks].forEach((links,ci) => {
       const lis = ftCols[ci].querySelectorAll('a');
-      links.forEach((l,i)
+      links.forEach((l,i) => { if(lis[i]) lis[i].textContent = l; });
+    });
+    const ftLegal = document.querySelectorAll('.ft-legal a');
+    ftLegal[0].textContent = t.ftPrivacy;
+    ftLegal[1].textContent = t.ftTerms;
+    ftLegal[2].textContent = t.ftFraud;
+  }
+</script>
+</body>
+</html>
