@@ -585,7 +585,7 @@
     <div>
       <div class="ci"><div class="ci-label">본사</div><div class="ci-val">Unit 2A, 17/F, Glenealy Tower<br/>No. 1 Glenealy, Central<br/>홍콩 특별행정구</div></div>
       <div class="ci"><div class="ci-label">직통 전화</div><div class="ci-val"><a href="tel:+85297899458">+852 9789 9458</a></div></div>
-      <div class="ci"><div class="ci-label">이메일</div><div class="ci-val"><a href="/cdn-cgi/l/email-protection#bed7d0d8d1fecddbd1cbd2dfd0dad6d590ddd1d3">info@seoulandhk.com</a></div></div>
+      <div class="ci"><div class="ci-label">이메일</div><div class="ci-val"><a href="/cdn-cgi/l/email-protection#bed7d0d8d1fecddbd1cbd2dfd0dad6d590ddd1d3"><span class="__cf_email__" data-cfemail="254c4b434a6556404a5049444b414d4e0b464a48">[email&#160;protected]</span></a></div></div>
       <div class="ci"><div class="ci-label">대표이사</div><div class="ci-val">Garbuja Pun Devi<br/><span style="font-size:.85rem;color:var(--mid)">개인정보 관리책임자: Shahi Shila</span></div></div>
     </div>
   </div>
@@ -635,7 +635,7 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // ── SCROLL REVEAL ──
   document.querySelectorAll('.reveal').forEach(el => el.classList.add('animate'));
   const obs = new IntersectionObserver(entries => {
@@ -961,4 +961,10 @@
       links.forEach((l,i) => { if(lis[i]) lis[i].textContent = l; });
     });
     const ftLegal = document.querySelectorAll('.ft-legal a');
-    ftLegal[0].textContent = t.ftP
+    if(ftLegal[0]) ftLegal[0].textContent = t.ftPrivacy;
+    if(ftLegal[1]) ftLegal[1].textContent = t.ftTerms;
+    if(ftLegal[2]) ftLegal[2].textContent = t.ftFraud;
+  }
+</script>
+</body>
+</html>
