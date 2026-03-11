@@ -97,9 +97,8 @@
 
     /* ── MAIN NAV ── */
     nav { background: var(--white); border-bottom: 1px solid var(--border); padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 70px; position: sticky; top: 0; z-index: 200; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
-    .nav-logo { display: flex; align-items: baseline; text-decoration: none; }
-    .nav-logo-main { font-family: 'Barlow', sans-serif; font-size: 1.15rem; font-weight: 700; color: var(--navy); letter-spacing: -.01em; }
-    .nav-logo-dot { color: var(--red); }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+    .nav-logo svg { display: block; height: 40px; width: auto; }
     .nav-links { display: flex; height: 70px; list-style: none; }
     .nav-links > li { height: 100%; display: flex; align-items: center; }
     .nav-links > li > a { font-size: .78rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--dark); text-decoration: none; padding: 0 18px; height: 100%; display: flex; align-items: center; border-bottom: 3px solid transparent; margin-bottom: -1px; transition: color .2s, border-color .2s; }
@@ -358,7 +357,20 @@
 <!-- MAIN NAV -->
 <nav>
   <a href="#" class="nav-logo">
-    <span class="nav-logo-main">Seoul & HK<span class="nav-logo-dot"> · </span>MNGMT</span>
+    <svg width="188" height="40" viewBox="0 0 188 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Navy square -->
+      <rect x="0" y="0" width="40" height="40" fill="#002147"/>
+      <!-- Red diamond outline -->
+      <rect x="7" y="7" width="26" height="26" fill="none" stroke="#c41e3a" stroke-width="1.8" transform="translate(20,20) rotate(45) translate(-20,-20)"/>
+      <!-- SH monogram -->
+      <text x="20" y="27" font-family="Libre Baskerville, serif" font-size="16" font-weight="700" fill="white" text-anchor="middle">SH</text>
+      <!-- Divider -->
+      <rect x="48" y="8" width="1.5" height="24" fill="#d8d8d8"/>
+      <!-- MNGMT text -->
+      <text x="58" y="22" font-family="Barlow, sans-serif" font-size="13" font-weight="800" fill="#002147" letter-spacing="1.5">MNGMT</text>
+      <!-- Subtitle -->
+      <text x="58" y="34" font-family="Barlow, sans-serif" font-size="6.5" font-weight="500" fill="#767676" letter-spacing="2">SEOUL &amp; HONG KONG</text>
+    </svg>
   </a>
   <ul class="nav-links">
     <li><a href="#insights">인사이트</a></li>
@@ -567,12 +579,12 @@
 <section class="contact" id="contact">
   <div class="contact-l reveal">
     <div class="section-label" style="margin-bottom:16px">문의</div>
-    <h2 class="contact-h2">상담 시작하기</h2>
+    <h2 class="contact-h2">기밀 상담 시작하기</h2>
     <p class="contact-sub">모든 문의는 철저한 기밀로 처리됩니다. 전략적 과제의 성격을 공유해 주시면 초기 논의를 위한 최적의 전문가 팀 구성을 제안드리겠습니다.</p>
     <div>
       <div class="ci"><div class="ci-label">본사</div><div class="ci-val">Unit 2A, 17/F, Glenealy Tower<br/>No. 1 Glenealy, Central<br/>홍콩 특별행정구</div></div>
       <div class="ci"><div class="ci-label">직통 전화</div><div class="ci-val"><a href="tel:+85297899458">+852 9789 9458</a></div></div>
-      <div class="ci"><div class="ci-label">이메일</div><div class="ci-val"><a href="mailto:info@seoulandhk.com"><!--email_off-->info@seoulandhk.com<!--/email_off--></a></div></div>
+      <div class="ci"><div class="ci-label">이메일</div><div class="ci-val"><a href="/cdn-cgi/l/email-protection#bed7d0d8d1fecddbd1cbd2dfd0dad6d590ddd1d3">info@seoulandhk.com</a></div></div>
       <div class="ci"><div class="ci-label">대표이사</div><div class="ci-val">Garbuja Pun Devi<br/><span style="font-size:.85rem;color:var(--mid)">개인정보 관리책임자: Shahi Shila</span></div></div>
     </div>
   </div>
@@ -595,7 +607,20 @@
   <div class="footer-main">
     <div class="footer-top">
       <div>
-        <div class="ft-brand-name">Seoul &amp; HK MNGMT Co.</div>
+        <svg width="176" height="38" viewBox="0 0 176 38" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:16px">
+          <!-- Red square on dark -->
+          <rect x="0" y="0" width="38" height="38" fill="#c41e3a"/>
+          <!-- Diamond outline -->
+          <rect x="6" y="6" width="26" height="26" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" transform="translate(19,19) rotate(45) translate(-19,-19)"/>
+          <!-- SH monogram -->
+          <text x="19" y="26" font-family="Libre Baskerville, serif" font-size="15" font-weight="700" fill="white" text-anchor="middle">SH</text>
+          <!-- Divider -->
+          <rect x="46" y="6" width="1.5" height="26" fill="rgba(255,255,255,0.15)"/>
+          <!-- MNGMT text -->
+          <text x="56" y="21" font-family="Barlow, sans-serif" font-size="13" font-weight="800" fill="white" letter-spacing="1.5">MNGMT</text>
+          <!-- Subtitle -->
+          <text x="56" y="33" font-family="Barlow, sans-serif" font-size="6.5" font-weight="500" fill="rgba(255,255,255,0.35)" letter-spacing="2">SEOUL &amp; HONG KONG</text>
+        </svg>
         <p class="ft-brand-desc">프라이빗 부티크 전략 컨설팅 및 투자 운용 기업. 홍콩을 본사로, 서울-홍콩 듀얼 베이스 모델로 APAC 전역을 커버합니다.</p>
       </div>
       <div class="ft-col"><h4>서비스</h4><ul><li><a href="#">M&amp;A · 실사</a></li><li><a href="#">전사전략</a></li><li><a href="#">AI · 메타버스</a></li><li><a href="#">Secondary 전략</a></li></ul></div>
@@ -609,7 +634,7 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // ── SCROLL REVEAL ──
   const obs = new IntersectionObserver(entries => {
     entries.forEach((e, i) => {
@@ -703,7 +728,7 @@
       ctaBtn: '미팅 요청하기',
       // contact
       contactLabel: '문의',
-      contactH: '상담 시작하기',
+      contactH: '기밀 상담 시작하기',
       contactSub: '모든 문의는 철저한 기밀로 처리됩니다. 전략적 과제의 성격을 공유해 주시면 초기 논의를 위한 최적의 전문가 팀 구성을 제안드리겠습니다.',
       hq: '본사', hqVal: 'Unit 2A, 17/F, Glenealy Tower<br/>No. 1 Glenealy, Central<br/>홍콩 특별행정구',
       phone: '직통 전화', email: '이메일', director: '대표이사',
@@ -934,10 +959,4 @@
       links.forEach((l,i) => { if(lis[i]) lis[i].textContent = l; });
     });
     const ftLegal = document.querySelectorAll('.ft-legal a');
-    ftLegal[0].textContent = t.ftPrivacy;
-    ftLegal[1].textContent = t.ftTerms;
-    ftLegal[2].textContent = t.ftFraud;
-  }
-</script>
-</body>
-</html>
+    ftLegal[0].textContent = t.ftP
